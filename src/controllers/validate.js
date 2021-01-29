@@ -1,3 +1,5 @@
+import successResponse from "../utils/successResponse";
+
 function testJSON(text) {
   if (typeof text !== "string") {
     return false;
@@ -96,5 +98,69 @@ export const validateConditionValue = (req, res, next) => {
   }
   return next();
 };
-const validator = (req, res) => res.send("ok");
+
+export const validate = (d, f, rc, rv) => {
+  switch (rc) {
+    case "eq": {
+      if (typeof d === "string") {
+        return d === rv;
+      }
+      if (typeof d === "object" && !Array.isArray(d)) {
+        return d[`${f}`] === rv;
+      }
+      return false;
+    }
+    case "neq": {
+      if (typeof d === "string") {
+        return d !== rv;
+      }
+      if (typeof d === "object" && !Array.isArray(d)) {
+        return d[`${f}`] !== rv;
+      }
+      return false;
+    }
+    case "gt": {
+      if (typeof d === "string") {
+        return d > rv;
+      }
+      if (typeof d === "object" && !Array.isArray(d)) {
+        return d[`${f}`] > rv;
+      }
+      return false;
+    }
+    case "gte": {
+      if (typeof d === "string") {
+        return d >= rv;
+      }
+      if (typeof d === "object" && !Array.isArray(d)) {
+        return d[`${f}`] >= rv;
+      }
+      return false;
+    }
+    case "contains": {
+      if (typeof d === "object" && Array.isArray(d)) {
+        return d.includes(rv);
+      }
+      return false;
+    }
+    default:
+      return false;
+  }
+};
+const validator = (req, res) => {
+  const {
+    rule: { field, condition, condition_value: conditionValue },
+    data,
+  } = req.body;
+
+  const checkValidate = validate(
+    data,
+    field,
+    condition,
+    conditionValue
+  );
+  if (!checkValidate) {
+    return successResponse();
+  }
+};
 export default validator;
