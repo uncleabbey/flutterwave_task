@@ -24,6 +24,7 @@ export default (req, res, next) => {
         err: `field ${field} is missing from data.`,
       });
     }
+    /* istanbul ignore next */
     return next();
   }
 
@@ -33,6 +34,7 @@ export default (req, res, next) => {
     const fieldValue =
       fieldArr[0] in data || fieldArr[1] in data[fieldArr[0]];
     if (!fieldValue) {
+      /* istanbul ignore next */
       return next({
         status: 400,
         err: `field ${field} is missing from data.`,

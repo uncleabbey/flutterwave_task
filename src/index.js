@@ -15,7 +15,8 @@ app.use(routes);
 app.use((req, res) => {
   res.status(404).send({
     status: "error",
-    error: "404 Page Not Found",
+    message: "404 Page Not Found.",
+    data: null,
   });
 });
 
