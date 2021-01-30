@@ -1,1 +1,1 @@
-# Validation Rule API [![Build Status](https://www.travis-ci.com/uncleabbey/flutterwave_task.svg?branch=main)](https://www.travis-ci.com/uncleabbey/flutterwave_task)
+# Validation Rule API [![Build Status](https://www.travis-ci.com/uncleabbey/flutterwave_task.svg?branch=main)](https://www.travis-ci.com/uncleabbey/flutterwave_task) [![Coverage Status](https://coveralls.io/repos/github/uncleabbey/flutterwave_task/badge.svg?branch=main)](https://coveralls.io/github/uncleabbey/flutterwave_task?branch=main)
