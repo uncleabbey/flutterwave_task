@@ -1,5 +1,6 @@
 const errorResponse = (res, error) => {
-  const { status, error: err } = error;
+  const { status, err } = error;
+
   res.status(status || 500);
   return res.json({
     message: err,

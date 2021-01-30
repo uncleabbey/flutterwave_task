@@ -1,20 +1,18 @@
 import { Router } from "express";
 import { validator } from "../controllers";
-import {
-  validateCondition,
-  validateConditionValue,
-  validateField,
-  validateRule,
-} from "../controllers/validate";
+import validateFieldAgainstData from "../middlewares/validateFieldAgainstData";
+import validateRule from "../middlewares/validateRule";
+import validateCondition from "../middlewares/validateCondition";
+import validateConditionValue from "../middlewares/validateConditionValue";
 
 const router = new Router();
 
 router.post(
   "/validate-rule",
   validateRule,
-  validateField,
-  validateConditionValue,
   validateCondition,
+  validateConditionValue,
+  validateFieldAgainstData,
   validator
 );
 

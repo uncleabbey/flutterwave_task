@@ -8,7 +8,6 @@ const entryUrl = (req, res) => {
     github: "@uncleabbey",
     email: "kayodegabriela@gmail.com",
     mobile: "07069388069",
-    twitter: "@uncleabbey_",
   };
 
   return successResponse(res, 200, msg, data);
