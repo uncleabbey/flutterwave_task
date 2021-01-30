@@ -1,5 +1,14 @@
 node_modules/
 
+package-lock.json
+
+
+.nyc_output/
+
+coverage/
+
+lcov.info
+
 yarn.lock
 
-package-lock.json
+dist/

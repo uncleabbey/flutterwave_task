@@ -26,3 +26,4 @@ app.listen(PORT, () =>
   // eslint-disable-next-line no-console
   console.log(`App is listening to port at localhost:${PORT}`)
 );
+export default app;

@@ -2,7 +2,7 @@ import successResponse from "../utils/successResponse";
 import validator from "./validate";
 
 const entryUrl = (req, res) => {
-  const msg = "UncleAbbey Simple Rule-Validation API";
+  const msg = "UncleAbbey Simple Rule-Validation API.";
   const data = {
     name: "Kayode Gabriel Abiodun",
     github: "@uncleabbey",
